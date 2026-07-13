@@ -1,0 +1,487 @@
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+
+  /* NAV */
+
+  .nav-links,
+  .nav-btn{
+
+    display:none;
+
+  }
+
+
+  .menu-btn{
+
+    display:block;
+
+  }
+
+
+
+  /* GRIDS */
+
+
+  .hero-grid,
+  .services-grid,
+  .clients-grid,
+  .about-grid,
+  .timeline-grid,
+  .team-grid,
+  .service-page,
+  .blog-grid{
+
+
+    grid-template-columns:1fr;
+
+
+  }
+
+
+
+  /* FULL WIDTH CARDS */
+
+
+  .service-card.full,
+  .service-detail.full{
+
+
+    grid-column:span 1;
+
+
+  }
+
+
+
+  /* FOOTER */
+
+
+  .footer-grid{
+
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+
+  }
+
+
+
+  .footer-tags{
+
+
+    justify-content:center;
+
+
+  }
+
+
+
+}
+
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+
+@media(max-width:768px){
+
+
+  html,
+  body{
+
+    width:100%;
+
+    overflow-x:hidden;
+
+  }
+
+
+
+  .container{
+
+    width:min(100%,92%);
+
+  }
+
+
+
+  /* NAVBAR */
+
+
+  .navbar{
+
+
+    height:80px;
+
+
+    grid-template-columns:auto auto;
+
+
+    justify-content:space-between;
+
+
+  }
+
+
+
+  .logo{
+
+
+    font-size:1.1rem;
+
+
+  }
+
+
+
+
+  /* HERO */
+
+
+  .hero,
+  .page-hero{
+
+
+    padding-top:120px;
+
+    padding-bottom:80px;
+
+
+  }
+
+
+
+
+  .hero h1,
+  .page-hero h1{
+
+
+    font-size:clamp(2.5rem,12vw,4rem);
+
+
+    line-height:1.05;
+
+
+    word-break:break-word;
+
+
+  }
+
+
+
+
+  .hero p,
+  .page-hero p{
+
+
+    font-size:.95rem;
+
+
+    line-height:1.8;
+
+
+  }
+
+
+
+
+  /* BUTTONS */
+
+
+  .hero-buttons{
+
+
+    flex-direction:column;
+
+
+    width:100%;
+
+
+  }
+
+
+
+  .hero-buttons a,
+  .primary-btn,
+  .ghost-btn{
+
+
+    width:100%;
+
+
+  }
+
+
+
+
+  /* CARDS */
+
+
+  .card,
+  .service-card,
+  .service-detail,
+  .client-card,
+  .about-card,
+  .team-card,
+  .timeline-item,
+  .trust-box{
+
+
+    padding:28px;
+
+
+    border-radius:24px;
+
+
+  }
+
+
+
+
+  .card h3,
+  .service-card h3,
+  .service-detail h2,
+  .client-card h3,
+  .about-card h3,
+  .team-card h3{
+
+
+    font-size:1.5rem;
+
+
+    line-height:1.2;
+
+
+  }
+
+
+
+
+
+  /* HERO PANEL */
+
+
+  .hero-panel{
+
+
+    width:100%;
+
+
+  }
+
+
+
+  .hero-panel-inner{
+
+
+    max-width:100%;
+
+
+    padding:30px;
+
+
+  }
+
+
+
+
+  /* STATS */
+
+
+  .stats{
+
+
+    grid-template-columns:1fr;
+
+
+    margin:80px auto;
+
+
+  }
+
+
+
+  .stat-box{
+
+
+    padding:35px;
+
+
+  }
+
+
+
+  .stat-box h2{
+
+
+    font-size:2.4rem;
+
+
+  }
+
+
+
+
+
+  /* TAGS */
+
+
+  .tags{
+
+
+    gap:10px;
+
+
+  }
+
+
+
+
+  .tags span{
+
+
+    font-size:.6rem;
+
+
+    padding:10px 14px;
+
+
+  }
+
+
+
+
+
+  /* FOOTER */
+
+
+  .footer{
+
+
+    padding:35px 0;
+
+
+  }
+
+
+
+  .footer-grid{
+
+
+    gap:20px;
+
+
+  }
+
+
+
+  .footer-tags{
+
+
+    flex-wrap:wrap;
+
+
+  }
+
+
+
+
+  /* TEXT FIX */
+
+
+  h1,
+  h2,
+  h3,
+  p,
+  a,
+  span{
+
+
+    overflow-wrap:break-word;
+
+
+  }
+
+
+
+  img{
+
+
+    max-width:100%;
+
+    height:auto;
+
+
+  }
+
+
+
+  button,
+  a{
+
+
+    -webkit-tap-highlight-color:transparent;
+
+
+  }
+
+
+
+}
+
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+
+@media(max-width:480px){
+
+
+  .hero h1,
+  .page-hero h1{
+
+
+    font-size:2.4rem;
+
+
+  }
+
+
+
+  .section-label{
+
+
+    font-size:.65rem;
+
+
+  }
+
+
+
+  .primary-btn,
+  .ghost-btn{
+
+
+    padding:16px 20px;
+
+
+  }
+
+
+}

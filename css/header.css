@@ -1,0 +1,374 @@
+/* =========================================
+   HEADER / NAVBAR
+========================================= */
+
+
+.header{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  z-index:999;
+
+  background:
+  rgba(10,42,146,0.85);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid var(--line);
+
+}
+
+
+
+.navbar{
+
+  height:90px;
+
+  display:grid;
+
+  grid-template-columns:auto 1fr auto;
+
+  align-items:center;
+
+  gap:40px;
+
+}
+
+
+
+.logo{
+
+  font-family:'Inter',sans-serif;
+
+  font-weight:800;
+
+  font-size:1.4rem;
+
+  letter-spacing:.08em;
+
+}
+
+
+
+.logo .accent{
+
+  color:var(--accent);
+
+}
+
+
+
+.logo .white{
+
+  color:var(--text);
+
+}
+
+
+
+.nav-links{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:40px;
+
+  list-style:none;
+
+}
+
+
+
+.nav-links a{
+
+  color:var(--muted);
+
+  font-size:.75rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.18em;
+
+  position:relative;
+
+}
+
+
+
+.nav-links a::after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:-10px;
+
+  left:0;
+
+  width:0;
+
+  height:2px;
+
+  background:var(--accent);
+
+  transition:.4s ease;
+
+}
+
+
+
+.nav-links a:hover{
+
+  color:var(--text);
+
+}
+
+
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
+
+
+/* BUTTON */
+
+.nav-btn,
+.primary-btn{
+
+
+  padding:18px 28px;
+
+  background:var(--accent);
+
+  color:#061B4F;
+
+  border:none;
+
+  border-radius:100px;
+
+
+  text-transform:uppercase;
+
+  letter-spacing:.14em;
+
+  font-size:.72rem;
+
+  font-weight:700;
+
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:10px;
+
+
+}
+
+
+
+.nav-btn:hover,
+.primary-btn:hover{
+
+
+  transform:translateY(-4px);
+
+
+  box-shadow:
+  0 20px 40px rgba(56,189,248,.25);
+
+
+}
+
+
+
+/* MOBILE BUTTON */
+
+.menu-btn{
+
+
+  display:none;
+
+
+  background:none;
+
+  border:none;
+
+
+  color:var(--text);
+
+
+  font-size:2rem;
+
+  cursor:pointer;
+
+
+}
+
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+
+.mobile-menu{
+
+
+  position:fixed;
+
+
+  inset:0;
+
+
+  background:
+  rgba(6,27,79,.98);
+
+
+
+  z-index:998;
+
+
+
+  display:flex;
+
+
+  flex-direction:column;
+
+
+  justify-content:center;
+
+
+  align-items:center;
+
+
+  gap:40px;
+
+
+
+  opacity:0;
+
+
+  visibility:hidden;
+
+
+  transform:translateY(-20px);
+
+
+  transition:
+
+  opacity .35s ease,
+
+  transform .35s ease,
+
+  visibility .35s ease;
+
+
+}
+
+
+
+.mobile-menu.active{
+
+
+  opacity:1;
+
+  visibility:visible;
+
+  transform:translateY(0);
+
+
+}
+
+
+
+.mobile-menu a{
+
+
+  font-size:1.2rem;
+
+
+  text-transform:uppercase;
+
+
+  letter-spacing:.15em;
+
+
+  color:var(--text);
+
+
+}
+
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+
+@media(max-width:1000px){
+
+
+  .nav-links,
+  .nav-btn{
+
+    display:none;
+
+  }
+
+
+
+  .menu-btn{
+
+    display:block;
+
+  }
+
+
+
+  .navbar{
+
+    grid-template-columns:auto auto;
+
+    justify-content:space-between;
+
+    height:80px;
+
+  }
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+  .logo{
+
+    font-size:1.1rem;
+
+  }
+
+
+  .mobile-menu a{
+
+    font-size:1rem;
+
+  }
+
+
+}

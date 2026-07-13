@@ -1,0 +1,343 @@
+/* =========================================
+   CLIENTS PAGE
+========================================= */
+
+
+/* INTRO */
+
+.clients-intro{
+
+  padding:120px 0;
+
+}
+
+
+.clients-intro p{
+
+  max-width:850px;
+
+  color:var(--muted);
+
+  line-height:2;
+
+}
+
+
+
+/* CLIENT GRID */
+
+.clients-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:30px;
+
+  padding-bottom:140px;
+
+}
+
+
+
+/* CLIENT CARD */
+
+.client-card{
+
+  position:relative;
+
+
+  border:1px solid var(--line);
+
+
+  padding:50px;
+
+
+  border-radius:var(--radius);
+
+
+  overflow:hidden;
+
+
+  background:
+
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,.03),
+  rgba(255,255,255,.01)
+  );
+
+
+  backdrop-filter:blur(10px);
+
+}
+
+
+
+.client-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+
+  background:
+
+  linear-gradient(
+  135deg,
+  rgba(56,189,248,.10),
+  transparent 45%
+  );
+
+
+  opacity:0;
+
+  transition:.5s ease;
+
+}
+
+
+
+.client-card:hover{
+
+  transform:translateY(-12px);
+
+
+  border-color:
+
+  rgba(56,189,248,.4);
+
+}
+
+
+
+.client-card:hover::before{
+
+  opacity:1;
+
+}
+
+
+
+
+.client-number{
+
+  color:var(--accent);
+
+
+  font-size:.8rem;
+
+
+  letter-spacing:.25em;
+
+}
+
+
+
+
+.client-card h3{
+
+  font-family:'Merriweather',serif;
+
+
+  font-size:2rem;
+
+
+  margin:25px 0;
+
+
+}
+
+
+
+.client-card p{
+
+  color:var(--muted);
+
+}
+
+
+
+
+/* TRUST SECTION */
+
+
+.clients-trust{
+
+  padding-bottom:160px;
+
+}
+
+
+
+.trust-box{
+
+
+  position:relative;
+
+
+  border:1px solid var(--line);
+
+
+  border-radius:40px;
+
+
+  padding:80px;
+
+
+  overflow:hidden;
+
+
+  background:
+
+  linear-gradient(
+  135deg,
+  rgba(56,189,248,.08),
+  rgba(255,255,255,.01)
+  );
+
+
+  text-align:center;
+
+
+}
+
+
+
+.trust-box::before{
+
+
+  content:"";
+
+
+  position:absolute;
+
+
+  width:500px;
+
+
+  height:500px;
+
+
+
+  background:
+
+  radial-gradient(
+  circle,
+  rgba(56,189,248,.15),
+  transparent 70%
+  );
+
+
+
+  top:-250px;
+
+
+  right:-200px;
+
+
+}
+
+
+
+
+.trust-box h2{
+
+
+  position:relative;
+
+
+  font-family:'Merriweather',serif;
+
+
+  font-size:clamp(2rem,5vw,4rem);
+
+
+  margin-bottom:30px;
+
+
+}
+
+
+
+
+.trust-box p{
+
+
+  position:relative;
+
+
+  max-width:850px;
+
+
+  margin:auto;
+
+
+  color:var(--muted);
+
+
+  line-height:2;
+
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:1000px){
+
+
+.clients-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.clients-intro{
+
+padding:100px 0;
+
+}
+
+
+
+.client-card{
+
+padding:30px;
+
+}
+
+
+
+.client-card h3{
+
+font-size:1.6rem;
+
+}
+
+
+
+.trust-box{
+
+padding:45px 30px;
+
+border-radius:28px;
+
+}
+
+
+}

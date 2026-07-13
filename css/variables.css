@@ -1,0 +1,17 @@
+:root{
+
+  --bg-primary:#0A2A92;
+  --bg-secondary:#061B4F;
+
+  --accent:#38BDF8;
+  --accent-light:#7DD3FC;
+  --accent-dark:#0369A1;
+
+  --text:#FFFFFF;
+  --muted:#BFD7FF;
+
+  --line:rgba(56,189,248,0.18);
+
+  --radius:28px;
+
+}

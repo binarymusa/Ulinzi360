@@ -1,0 +1,378 @@
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+
+/* CONTACT CONSULTANTS */
+
+.consultants{
+
+  padding-bottom:140px;
+
+}
+
+
+.consultants .team-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:30px;
+
+}
+
+
+
+/* CONTACT CARD */
+
+.consultants .team-card{
+
+  position:relative;
+
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  padding:50px;
+
+  overflow:hidden;
+
+
+  background:
+
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,.03),
+  rgba(255,255,255,.01)
+  );
+
+
+}
+
+
+
+.consultants .team-card:hover{
+
+  transform:translateY(-12px);
+
+  border-color:rgba(56,189,248,.4);
+
+}
+
+
+
+
+/* AVATAR */
+
+.avatar{
+
+  width:85px;
+
+  height:85px;
+
+  border-radius:50%;
+
+
+  border:1px solid rgba(56,189,248,.35);
+
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+
+  color:var(--accent);
+
+
+  font-family:'Merriweather',serif;
+
+  font-weight:900;
+
+  font-size:1.2rem;
+
+
+  margin-bottom:30px;
+
+
+  background:
+
+  linear-gradient(
+  135deg,
+  rgba(56,189,248,.12),
+  rgba(255,255,255,.01)
+  );
+
+}
+
+
+
+
+.consultants .team-card h3{
+
+  font-family:'Merriweather',serif;
+
+  font-size:2rem;
+
+  margin-bottom:20px;
+
+}
+
+
+
+.consultants .team-card p{
+
+  color:var(--muted);
+
+  margin-bottom:25px;
+
+}
+
+
+
+/* CONTACT DETAILS */
+
+
+.contact-box{
+
+  border-top:1px solid var(--line);
+
+  border-bottom:1px solid var(--line);
+
+
+  padding:25px 0;
+
+  margin:25px 0 35px;
+
+}
+
+
+
+.contact-box p{
+
+  margin-bottom:15px;
+
+  font-size:.9rem;
+
+}
+
+
+
+.contact-box span{
+
+  color:var(--accent);
+
+  display:block;
+
+  font-size:.7rem;
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
+
+  margin-bottom:5px;
+
+}
+
+
+
+.contact-box a{
+
+  color:var(--text);
+
+}
+
+
+
+.contact-box a:hover{
+
+  color:var(--accent);
+
+}
+
+
+
+
+/* CONTACT FORM */
+
+
+.contact-form-section{
+
+  padding-bottom:180px;
+
+}
+
+
+
+.contact-form{
+
+  max-width:900px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+
+  margin-top:40px;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea{
+
+
+  width:100%;
+
+
+  padding:20px 24px;
+
+
+  border:1px solid var(--line);
+
+
+  border-radius:22px;
+
+
+  background:
+
+  rgba(255,255,255,.03);
+
+
+  color:var(--text);
+
+
+  font-family:'Inter',sans-serif;
+
+
+  font-size:1rem;
+
+
+  outline:none;
+
+
+  backdrop-filter:blur(10px);
+
+
+}
+
+
+
+.contact-form textarea{
+
+  min-height:200px;
+
+  resize:none;
+
+}
+
+
+
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+  color:var(--muted);
+
+}
+
+
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+
+  border-color:var(--accent);
+
+
+  background:
+
+  rgba(56,189,248,.05);
+
+
+  transform:translateY(-2px);
+
+}
+
+
+
+
+.contact-form .primary-btn{
+
+  width:fit-content;
+
+  margin-top:15px;
+
+  cursor:pointer;
+
+}
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:1100px){
+
+
+.consultants .team-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.consultants .team-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.consultants .team-card{
+
+padding:30px;
+
+}
+
+
+
+.avatar{
+
+width:70px;
+
+height:70px;
+
+}
+
+
+
+.contact-form .primary-btn{
+
+width:100%;
+
+}
+
+
+
+.contact-form-section{
+
+padding-bottom:120px;
+
+}
+
+
+}
