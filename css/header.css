@@ -2,7 +2,6 @@
    HEADER / NAVBAR
 ========================================= */
 
-
 .header{
 
   position:fixed;
@@ -15,9 +14,9 @@
   z-index:999;
 
   background:
-  rgba(10,42,146,0.85);
+  rgba(8,31,106,.92);
 
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(16px);
 
   border-bottom:1px solid var(--line);
 
@@ -41,26 +40,31 @@
 
 
 
+/* LOGO */
+
 .logo{
 
   font-family:'Inter',sans-serif;
 
-  font-weight:800;
+  font-weight:900;
 
-  font-size:1.4rem;
+  font-size:1.45rem;
 
-  letter-spacing:.08em;
+  letter-spacing:.12em;
+
+  display:flex;
+
+  align-items:center;
 
 }
 
 
 
-.logo .accent{
+.logo .gold{
 
   color:var(--accent);
 
 }
-
 
 
 .logo .white{
@@ -71,6 +75,9 @@
 
 
 
+/* NAVIGATION */
+
+
 .nav-links{
 
   display:flex;
@@ -79,7 +86,7 @@
 
   align-items:center;
 
-  gap:40px;
+  gap:38px;
 
   list-style:none;
 
@@ -89,15 +96,17 @@
 
 .nav-links a{
 
-  color:var(--muted);
+  color:rgba(255,255,255,.8);
 
-  font-size:.75rem;
+  font-size:.72rem;
 
   text-transform:uppercase;
 
   letter-spacing:.18em;
 
   position:relative;
+
+  transition:var(--transition);
 
 }
 
@@ -109,7 +118,7 @@
 
   position:absolute;
 
-  bottom:-10px;
+  bottom:-12px;
 
   left:0;
 
@@ -119,7 +128,7 @@
 
   background:var(--accent);
 
-  transition:.4s ease;
+  transition:.35s ease;
 
 }
 
@@ -127,7 +136,7 @@
 
 .nav-links a:hover{
 
-  color:var(--text);
+  color:var(--accent);
 
 }
 
@@ -141,22 +150,23 @@
 
 
 
-/* BUTTON */
+/* =========================================
+   BUTTON
+========================================= */
+
 
 .nav-btn,
 .primary-btn{
 
-
-  padding:18px 28px;
+  padding:17px 30px;
 
   background:var(--accent);
 
-  color:#061B4F;
+  color:var(--bg-primary);
 
   border:none;
 
   border-radius:100px;
-
 
   text-transform:uppercase;
 
@@ -164,8 +174,7 @@
 
   font-size:.72rem;
 
-  font-weight:700;
-
+  font-weight:800;
 
   display:inline-flex;
 
@@ -175,6 +184,7 @@
 
   gap:10px;
 
+  transition:var(--transition);
 
 }
 
@@ -183,38 +193,43 @@
 .nav-btn:hover,
 .primary-btn:hover{
 
-
   transform:translateY(-4px);
 
+  background:var(--accent-light);
 
   box-shadow:
-  0 20px 40px rgba(56,189,248,.25);
-
+  0 20px 45px rgba(212,175,55,.35);
 
 }
 
 
 
-/* MOBILE BUTTON */
+/* =========================================
+   MOBILE BUTTON
+========================================= */
+
 
 .menu-btn{
 
-
   display:none;
 
+  background:
 
-  background:none;
+  rgba(212,175,55,.12);
 
-  border:none;
+  border:1px solid var(--line);
 
+  width:45px;
 
-  color:var(--text);
+  height:45px;
 
+  border-radius:12px;
 
-  font-size:2rem;
+  color:var(--accent);
+
+  font-size:1.5rem;
 
   cursor:pointer;
-
 
 }
 
@@ -227,40 +242,35 @@
 
 .mobile-menu{
 
-
   position:fixed;
-
 
   inset:0;
 
-
   background:
-  rgba(6,27,79,.98);
 
+  linear-gradient(
+  180deg,
+  #0A2A92,
+  #081F6A
+  );
 
 
   z-index:998;
 
 
-
   display:flex;
-
 
   flex-direction:column;
 
-
   justify-content:center;
-
 
   align-items:center;
 
 
-  gap:40px;
-
+  gap:35px;
 
 
   opacity:0;
-
 
   visibility:hidden;
 
@@ -276,13 +286,11 @@
 
   visibility .35s ease;
 
-
 }
 
 
 
 .mobile-menu.active{
-
 
   opacity:1;
 
@@ -290,25 +298,29 @@
 
   transform:translateY(0);
 
-
 }
 
 
 
 .mobile-menu a{
 
-
-  font-size:1.2rem;
-
+  font-size:1.15rem;
 
   text-transform:uppercase;
 
+  letter-spacing:.18em;
 
-  letter-spacing:.15em;
+  color:white;
+
+  transition:.3s ease;
+
+}
 
 
-  color:var(--text);
 
+.mobile-menu a:hover{
+
+  color:var(--accent);
 
 }
 
@@ -330,13 +342,11 @@
   }
 
 
-
   .menu-btn{
 
     display:block;
 
   }
-
 
 
   .navbar{
@@ -359,7 +369,7 @@
 
   .logo{
 
-    font-size:1.1rem;
+    font-size:1.15rem;
 
   }
 
