@@ -27,3 +27,33 @@ function initMenu() {
   });
 
 }
+
+/* ==========================
+   CyberShield Tabs
+========================== */
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+
+const plans = document.querySelectorAll(".plans-container .pricing-card");
+
+tabButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        tabButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        plans.forEach(plan =>
+            plan.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        document
+            .getElementById(button.dataset.plan)
+            .classList.add("active");
+
+    });
+
+});

@@ -1,106 +1,202 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+
 *{
+
   margin:0;
+
   padding:0;
+
   box-sizing:border-box;
 
+
   transition:
+
   background-color .35s ease,
   border-color .35s ease,
   color .35s ease,
   transform .45s cubic-bezier(.22,.61,.36,1);
+
 }
+
+
 
 
 html{
+
   scroll-behavior:smooth;
+
 }
+
+
 
 
 body{
 
+
   background:var(--bg-primary);
+
 
   color:var(--text);
 
+
   font-family:'Inter',sans-serif;
+
 
   font-size:1rem;
 
+
   font-weight:400;
+
 
   overflow-x:hidden;
 
+
   position:relative;
 
+
 }
+
+
+
+
+/* =========================================
+   BACKGROUND GRID
+========================================= */
 
 
 body::before{
 
+
   content:"";
+
 
   position:fixed;
 
+
   inset:0;
 
+
   background-image:
+
+
   linear-gradient(
-  rgba(255,255,255,.015) 1px,
+
+  rgba(212,175,55,.025) 1px,
+
   transparent 1px
+
   ),
+
+
   linear-gradient(
+
   90deg,
-  rgba(255,255,255,.015) 1px,
+
+  rgba(212,175,55,.025),
+
   transparent 1px
+
   );
+
 
 
   background-size:80px 80px;
 
+
   pointer-events:none;
+
 
   z-index:-3;
 
+
 }
+
+
+
+
+/* =========================================
+   GOLD AMBIENT LIGHT
+========================================= */
 
 
 body::after{
 
+
   content:"";
+
 
   position:fixed;
 
-  width:800px;
-  height:800px;
+
+  width:850px;
+
+
+  height:850px;
+
 
 
   background:
+
+
   radial-gradient(
+
   circle,
-  rgba(56,189,248,.12),
+
+  rgba(212,175,55,.15),
+
   transparent 70%
+
   );
 
 
-  top:-250px;
 
-  right:-250px;
+  top:-300px;
+
+
+  right:-300px;
+
+
 
   z-index:-2;
 
+
 }
+
+
+
+
+/* LINKS */
 
 
 a{
+
   text-decoration:none;
+
   color:inherit;
+
 }
+
+
+
+
+/* IMAGES */
 
 
 img{
+
   width:100%;
+
   display:block;
+
 }
+
+
+
+
+/* TEXT */
 
 
 p{
@@ -112,10 +208,63 @@ p{
 }
 
 
+
+
+/* MAIN CONTAINER */
+
+
 .container{
+
 
   width:min(1400px,92%);
 
+
   margin:auto;
+
+
+}
+
+
+
+
+/* HEADINGS */
+
+
+h1,
+h2,
+h3{
+
+  color:var(--text);
+
+  font-family:'Merriweather',serif;
+
+  font-weight:900;
+
+}
+
+
+
+
+/* GOLD TEXT */
+
+
+.gold{
+
+  color:var(--accent);
+
+}
+
+
+
+
+
+/* SELECTION */
+
+
+::selection{
+
+  background:var(--accent);
+
+  color:#081F6A;
 
 }
