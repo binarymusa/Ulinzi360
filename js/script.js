@@ -28,7 +28,7 @@ function initMenu() {
 
 }
 
-//* ==========================Universal Tabs========================== */
+//* ==========================Universal Tabs ========================== */
 
 document.querySelectorAll(".tabs-section").forEach(section => {
 
