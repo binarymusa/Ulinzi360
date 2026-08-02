@@ -28,31 +28,27 @@ function initMenu() {
 
 }
 
-/* ==========================
-   CyberShield Tabs
-========================== */
+//* ==========================Universal Tabs========================== */
 
-const tabButtons = document.querySelectorAll(".tab-btn");
+document.querySelectorAll(".tabs-section").forEach(section => {
 
-const plans = document.querySelectorAll(".plans-container .pricing-card");
+    const buttons = section.querySelectorAll(".tab-btn");
+    const cards = section.querySelectorAll(".pricing-card");
 
-tabButtons.forEach(button => {
+    buttons.forEach(button => {
 
-    button.addEventListener("click", () => {
+        button.addEventListener("click", () => {
 
-        tabButtons.forEach(btn =>
-            btn.classList.remove("active")
-        );
+            buttons.forEach(btn => btn.classList.remove("active"));
+            cards.forEach(card => card.classList.remove("active"));
 
-        plans.forEach(plan =>
-            plan.classList.remove("active")
-        );
+            button.classList.add("active");
 
-        button.classList.add("active");
+            const target = button.dataset.target;
 
-        document
-            .getElementById(button.dataset.plan)
-            .classList.add("active");
+            section.querySelector("#" + target).classList.add("active");
+
+        });
 
     });
 
