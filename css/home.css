@@ -188,7 +188,7 @@
   position:relative;
 
   overflow:hidden;
-
+  transition:.35s ease;
 }
 
 
@@ -196,6 +196,7 @@
 .stat-box:hover{
 
   transform:translateY(-8px);
+  border-color:#D4AF37;
 
 }
 
