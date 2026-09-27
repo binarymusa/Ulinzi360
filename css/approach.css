@@ -1,553 +1,979 @@
 /* =========================================
    APPROACH PAGE
+   ULINZI 360 — PREMIUM CONSULTANCY STYLE
 ========================================= */
 
 
-/* HERO */
+/* =========================================
+   PAGE HERO
+========================================= */
 
-.page-hero{
+.page-hero {
+  min-height: 78vh;
 
-  min-height:85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  display:flex;
+  padding-top: 150px;
+  padding-bottom: 110px;
 
-  flex-direction:column;
-
-  justify-content:center;
-
-  padding-top:160px;
-
-  padding-bottom:120px;
-
-  position:relative;
-
-  overflow:hidden;
-
+  position: relative;
+  overflow: hidden;
 }
 
-.page-hero::before{
+.page-hero::before {
+  content: "";
 
-  content:"";
+  position: absolute;
 
-  position:absolute;
+  width: 850px;
+  height: 850px;
 
-  width:900px;
-
-  height:900px;
+  top: -420px;
+  right: -300px;
 
   background:
-  radial-gradient(
-    circle,
-    rgba(56,189,248,.12),
-    transparent 70%
-  );
+    radial-gradient(
+      circle,
+      rgba(201, 168, 92, 0.12),
+      transparent 68%
+    );
 
-  top:-350px;
-
-  right:-250px;
-
-  z-index:-1;
-
+  pointer-events: none;
+  z-index: -1;
 }
 
-.page-hero h1{
+.page-hero::after {
+  content: "";
 
-  font-family:'Merriweather',serif;
+  position: absolute;
 
-  font-weight:900;
+  width: 500px;
+  height: 500px;
 
-  font-size:clamp(4rem,8vw,7rem);
-
-  line-height:.9;
-
-  letter-spacing:-.05em;
-
-  margin:25px 0 35px;
-
-  max-width:950px;
-
-}
-
-.page-hero p{
-
-  max-width:760px;
-
-  color:var(--muted);
-
-  font-size:1.05rem;
-
-  line-height:1.9;
-
-}
-
-
-
-/* INTRO */
-
-.approach-intro{
-
-  padding:120px 0 150px;
-
-}
-
-.approach-intro p{
-
-  max-width:860px;
-
-  color:var(--muted);
-
-  line-height:2;
-
-}
-
-
-
-/* TIMELINE */
-
-.timeline{
-
-  padding-bottom:180px;
-
-}
-
-.timeline-grid{
-
-  position:relative;
-
-  display:grid;
-
-  gap:35px;
-
-  margin-top:70px;
-
-}
-
-.timeline-grid::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:32px;
-
-  top:0;
-
-  bottom:0;
-
-  width:1px;
+  bottom: -300px;
+  left: -250px;
 
   background:
-  linear-gradient(
-    rgba(56,189,248,.35),
-    transparent
-  );
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.035),
+      transparent 70%
+    );
 
+  pointer-events: none;
+  z-index: -1;
 }
 
-.timeline-item{
+.page-hero h1 {
+  font-family: "Merriweather", serif;
 
-  position:relative;
+  font-weight: 900;
 
-  margin-left:70px;
+  font-size: clamp(3.8rem, 7vw, 6.8rem);
 
-  border:1px solid var(--line);
+  line-height: 0.95;
 
-  border-radius:32px;
+  letter-spacing: -0.055em;
 
-  padding:45px;
+  max-width: 1000px;
+
+  margin: 24px 0 32px;
+}
+
+.page-hero p {
+  max-width: 780px;
+
+  color: var(--muted);
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   METHODOLOGY INTRO
+========================================= */
+
+.approach-intro {
+  padding: 105px 0 120px;
+}
+
+.approach-intro-grid {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+.approach-intro .section-top h2 {
+  font-family: "Merriweather", serif;
+
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  line-height: 1.15;
+
+  margin-top: 15px;
+}
+
+.approach-intro-content {
+  padding-top: 5px;
+}
+
+.approach-intro-content p {
+  max-width: 760px;
+
+  color: var(--muted);
+
+  font-size: 1.02rem;
+
+  line-height: 1.95;
+
+  margin-bottom: 22px;
+}
+
+.approach-intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   SERVICE DELIVERY PROCESS
+========================================= */
+
+.approach-process {
+  padding-bottom: 150px;
+}
+
+.approach-process .section-top {
+  margin-bottom: 60px;
+}
+
+.approach-process .section-top h2 {
+  font-family: "Merriweather", serif;
+
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  line-height: 1.15;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================
+   PROCESS LIST
+========================================= */
+
+.process-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.process-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 90px 1fr 50px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 35px 38px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 22px;
 
   background:
-  linear-gradient(
-    180deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.01)
+    );
 
-  backdrop-filter:blur(10px);
+  overflow: hidden;
 
-  transition:.35s ease;
-
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.timeline-item::before{
+.process-card::before {
+  content: "";
 
-  content:"";
+  position: absolute;
 
-  position:absolute;
+  top: 0;
+  left: 0;
 
-  left:-54px;
+  width: 3px;
+  height: 100%;
 
-  top:48px;
+  background: var(--accent);
 
-  width:18px;
+  transform: scaleY(0);
 
-  height:18px;
+  transform-origin: bottom;
 
-  border-radius:50%;
+  transition: transform 0.35s ease;
+}
 
-  background:var(--accent);
+.process-card:hover {
+  transform: translateX(6px);
+
+  border-color: rgba(201, 168, 92, 0.35);
 
   box-shadow:
-  0 0 0 8px rgba(56,189,248,.10);
-
+    0 20px 55px rgba(0, 0, 0, 0.24);
 }
 
-.timeline-item:hover{
+.process-card:hover::before {
+  transform: scaleY(1);
+}
 
-  transform:translateY(-10px);
 
-  border-color:rgba(56,189,248,.35);
+/* =========================================
+   FEATURED PROCESS STEP
+========================================= */
+
+.process-card-featured {
+  border-color: rgba(201, 168, 92, 0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(201, 168, 92, 0.065),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+
+/* =========================================
+   PROCESS NUMBER
+========================================= */
+
+.process-number {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+
+  border: 1px solid rgba(201, 168, 92, 0.25);
+
+  border-radius: 50%;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  background: rgba(201, 168, 92, 0.045);
+}
+
+
+/* =========================================
+   PROCESS CONTENT
+========================================= */
+
+.process-content {
+  position: relative;
+  z-index: 1;
+}
+
+.process-label {
+  display: block;
+
+  color: var(--accent);
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  margin-bottom: 10px;
+}
+
+.process-content h3 {
+  font-family: "Merriweather", serif;
+
+  font-size: 1.45rem;
+
+  line-height: 1.35;
+
+  margin-bottom: 12px;
+}
+
+.process-content p {
+  max-width: 850px;
+
+  color: var(--muted);
+
+  font-size: 0.92rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   PROCESS ARROW
+========================================= */
+
+.process-marker {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 50%;
+
+  color: var(--accent);
+
+  font-size: 1rem;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.process-card:hover .process-marker {
+  border-color: rgba(201, 168, 92, 0.4);
+
+  background: rgba(201, 168, 92, 0.07);
+}
+
+
+/* =========================================
+   CORE PRINCIPLES
+========================================= */
+
+.approach-principles {
+  padding-bottom: 150px;
+}
+
+.approach-principles .section-top {
+  margin-bottom: 55px;
+}
+
+.approach-principles .section-top h2 {
+  font-family: "Merriweather", serif;
+
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  line-height: 1.15;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================
+   PRINCIPLES GRID
+========================================= */
+
+.principles-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+.principle-card {
+  position: relative;
+
+  min-height: 270px;
+
+  padding: 40px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.principle-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 168, 92, 0.09),
+      transparent 50%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+.principle-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(201, 168, 92, 0.35);
 
   box-shadow:
-  0 25px 60px rgba(0,0,0,.35);
-
+    0 25px 60px rgba(0, 0, 0, 0.26);
 }
 
-.timeline-number{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  color:var(--accent);
-
-  font-size:.75rem;
-
-  letter-spacing:.22em;
-
-  margin-bottom:22px;
-
+.principle-card:hover::before {
+  opacity: 1;
 }
 
-.timeline-number::after{
+.principle-number {
+  position: relative;
+  z-index: 1;
 
-  content:"";
+  display: inline-flex;
 
-  width:40px;
+  align-items: center;
 
-  height:1px;
+  color: var(--accent);
 
-  background:rgba(56,189,248,.35);
+  font-size: 0.7rem;
 
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  margin-bottom: 30px;
 }
 
-.timeline-item h3{
+.principle-number::after {
+  content: "";
 
-  font-family:'Merriweather',serif;
+  width: 35px;
+  height: 1px;
 
-  font-size:2rem;
+  margin-left: 12px;
 
-  margin-bottom:20px;
-
-  line-height:1.2;
-
+  background: rgba(201, 168, 92, 0.45);
 }
 
-.timeline-item p{
+.principle-card h3 {
+  position: relative;
+  z-index: 1;
 
-  color:var(--muted);
+  font-family: "Merriweather", serif;
 
-  line-height:1.9;
+  font-size: 1.45rem;
 
+  line-height: 1.35;
+
+  margin-bottom: 16px;
+}
+
+.principle-card p {
+  position: relative;
+  z-index: 1;
+
+  color: var(--muted);
+
+  line-height: 1.85;
 }
 
 
+/* =========================================
+   DECISION FRAMEWORK
+========================================= */
 
-/* PRINCIPLES */
-
-.approach-principles{
-
-  padding-bottom:180px;
-
+.decision-section {
+  padding-bottom: 150px;
 }
 
-.about-grid{
+.decision-grid {
+  display: grid;
 
-  display:grid;
+  grid-template-columns: 1fr 1fr;
 
-  grid-template-columns:repeat(2,1fr);
+  gap: 90px;
 
-  gap:35px;
+  align-items: center;
 
-  margin-top:70px;
+  padding: 70px;
 
-}
+  border: 1px solid var(--line);
 
-.about-card{
-
-  position:relative;
-
-  border:1px solid var(--line);
-
-  border-radius:34px;
-
-  padding:50px;
-
-  overflow:hidden;
+  border-radius: 30px;
 
   background:
-  linear-gradient(
-    180deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
-
-  backdrop-filter:blur(10px);
-
-  transition:.35s ease;
-
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.01)
+    );
 }
 
-.about-card::before{
+.decision-content {
+  max-width: 650px;
+}
 
-  content:"";
+.decision-content h2 {
+  font-family: "Merriweather", serif;
 
-  position:absolute;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
 
-  inset:0;
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+
+  margin: 18px 0 25px;
+}
+
+.decision-content p {
+  color: var(--muted);
+
+  line-height: 1.85;
+
+  margin-bottom: 18px;
+}
+
+.decision-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   DECISION POINTS
+========================================= */
+
+.decision-points {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.decision-point {
+  display: grid;
+
+  grid-template-columns: 42px 1fr;
+
+  gap: 18px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.decision-point:first-child {
+  padding-top: 0;
+}
+
+.decision-point:last-child {
+  padding-bottom: 0;
+
+  border-bottom: none;
+}
+
+.decision-point > span {
+  color: var(--accent);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.decision-point strong {
+  display: block;
+
+  font-family: "Merriweather", serif;
+
+  font-size: 1rem;
+
+  margin-bottom: 7px;
+}
+
+.decision-point p {
+  color: var(--muted);
+
+  font-size: 0.86rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   FINAL SECTION
+========================================= */
+
+.approach-final {
+  padding-bottom: 120px;
+}
+
+.approach-final .trust-box {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  padding: 70px;
+
+  border: 1px solid rgba(201, 168, 92, 0.25);
+
+  border-radius: 30px;
+
+  overflow: hidden;
 
   background:
-  linear-gradient(
-    135deg,
-    rgba(56,189,248,.10),
-    transparent 50%
-  );
-
-  opacity:0;
-
-  transition:.35s;
-
+    linear-gradient(
+      135deg,
+      rgba(201, 168, 92, 0.075),
+      rgba(255, 255, 255, 0.015)
+    );
 }
 
-.about-card:hover{
+.approach-final .trust-box::before {
+  content: "";
 
-  transform:translateY(-10px);
+  position: absolute;
 
-  border-color:rgba(56,189,248,.35);
+  width: 500px;
+  height: 500px;
 
-  box-shadow:
-  0 25px 60px rgba(0,0,0,.35);
-
-}
-
-.about-card:hover::before{
-
-  opacity:1;
-
-}
-
-.about-number{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  color:var(--accent);
-
-  font-size:.78rem;
-
-  letter-spacing:.22em;
-
-  margin-bottom:22px;
-
-}
-
-.about-number::after{
-
-  content:"";
-
-  width:40px;
-
-  height:1px;
-
-  background:rgba(56,189,248,.35);
-
-}
-
-.about-card h3{
-
-  font-family:'Merriweather',serif;
-
-  font-size:2rem;
-
-  margin-bottom:20px;
-
-}
-
-.about-card p{
-
-  color:var(--muted);
-
-  line-height:1.9;
-
-}
-
-
-
-/* FINAL */
-
-.approach-final{
-
-  padding-bottom:180px;
-
-}
-
-.trust-box{
-
-  position:relative;
-
-  border:1px solid var(--line);
-
-  border-radius:42px;
-
-  padding:90px;
-
-  overflow:hidden;
+  top: -300px;
+  right: -150px;
 
   background:
-  linear-gradient(
-    135deg,
-    rgba(56,189,248,.08),
-    rgba(255,255,255,.01)
-  );
+    radial-gradient(
+      circle,
+      rgba(201, 168, 92, 0.13),
+      transparent 70%
+    );
 
-  text-align:center;
-
+  pointer-events: none;
 }
 
-.trust-box::before{
+.final-content {
+  position: relative;
 
-  content:"";
-
-  position:absolute;
-
-  width:500px;
-
-  height:500px;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(56,189,248,.15),
-    transparent 70%
-  );
-
-  top:-250px;
-
-  right:-200px;
-
+  max-width: 750px;
 }
 
-.trust-box h2{
+.final-content h2 {
+  font-family: "Merriweather", serif;
 
-  position:relative;
+  font-size: clamp(2rem, 4vw, 3.4rem);
 
-  font-family:'Merriweather',serif;
+  line-height: 1.15;
 
-  font-size:clamp(2rem,5vw,4rem);
+  letter-spacing: -0.035em;
 
-  margin-bottom:30px;
-
+  margin: 16px 0 20px;
 }
 
-.trust-box p{
+.final-content p {
+  color: var(--muted);
 
-  position:relative;
+  line-height: 1.85;
+}
 
-  max-width:850px;
+.final-action {
+  position: relative;
 
-  margin:auto;
-
-  color:var(--muted);
-
-  line-height:2;
-
+  flex-shrink: 0;
 }
 
 
+/* =========================================
+   LARGE TABLET
+========================================= */
 
-/* MOBILE */
+@media (max-width: 1100px) {
 
-@media(max-width:1000px){
+  .approach-intro-grid {
+    grid-template-columns: 1fr;
 
-  .about-grid{
+    gap: 35px;
+  }
 
-    grid-template-columns:1fr;
+  .decision-grid {
+    grid-template-columns: 1fr;
 
+    gap: 55px;
   }
 
 }
 
-@media(max-width:700px){
 
-  .page-hero{
+/* =========================================
+   TABLET
+========================================= */
 
-    min-height:auto;
+@media (max-width: 900px) {
 
-    padding-top:140px;
-
-    padding-bottom:100px;
-
+  .page-hero {
+    min-height: 70vh;
   }
 
-  .page-hero h1{
+  .process-card {
+    grid-template-columns: 75px 1fr 45px;
 
-    font-size:3rem;
+    gap: 22px;
 
+    padding: 30px;
   }
 
-  .timeline-grid::before{
-
-    left:14px;
-
+  .principles-grid {
+    grid-template-columns: 1fr;
   }
 
-  .timeline-item{
-
-    margin-left:35px;
-
-    padding:30px;
-
+  .decision-grid {
+    padding: 50px;
   }
 
-  .timeline-item::before{
+  .approach-final .trust-box {
+    flex-direction: column;
 
-    left:-30px;
+    align-items: flex-start;
 
-    width:14px;
-
-    height:14px;
-
+    padding: 55px;
   }
 
-  .timeline-item h3{
+}
 
-    font-size:1.5rem;
 
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .page-hero {
+    min-height: auto;
+
+    padding-top: 135px;
+    padding-bottom: 90px;
   }
 
-  .about-card{
+  .page-hero h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
 
-    padding:30px;
-
+    line-height: 0.98;
   }
 
-  .about-card h3{
+  .page-hero p {
+    font-size: 0.98rem;
 
-    font-size:1.5rem;
-
+    line-height: 1.8;
   }
 
-  .trust-box{
 
-    padding:45px 30px;
+  .approach-intro {
+    padding: 80px 0 90px;
+  }
 
-    border-radius:30px;
+  .approach-intro-content p {
+    font-size: 0.96rem;
+  }
 
+
+  .approach-process {
+    padding-bottom: 100px;
+  }
+
+  .approach-process .section-top {
+    margin-bottom: 40px;
+  }
+
+  .process-list {
+    gap: 12px;
+  }
+
+  .process-card {
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    padding: 27px;
+
+    border-radius: 20px;
+  }
+
+  .process-number {
+    width: 50px;
+    height: 50px;
+
+    font-size: 0.65rem;
+  }
+
+  .process-marker {
+    display: none;
+  }
+
+  .process-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .process-content p {
+    font-size: 0.88rem;
+  }
+
+
+  .approach-principles {
+    padding-bottom: 100px;
+  }
+
+  .principles-grid {
+    gap: 16px;
+  }
+
+  .principle-card {
+    min-height: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+  }
+
+  .principle-card h3 {
+    font-size: 1.3rem;
+  }
+
+
+  .decision-section {
+    padding-bottom: 100px;
+  }
+
+  .decision-grid {
+    padding: 35px 28px;
+
+    border-radius: 22px;
+  }
+
+  .decision-content h2 {
+    font-size: 2rem;
+  }
+
+
+  .approach-final {
+    padding-bottom: 80px;
+  }
+
+  .approach-final .trust-box {
+    padding: 38px 28px;
+
+    border-radius: 22px;
+
+    gap: 30px;
+  }
+
+  .final-content h2 {
+    font-size: 2rem;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+  .page-hero {
+    padding-top: 120px;
+    padding-bottom: 75px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .process-card {
+    padding: 24px 20px;
+
+    grid-template-columns: 48px 1fr;
+
+    gap: 16px;
+  }
+
+  .process-number {
+    width: 45px;
+    height: 45px;
+  }
+
+  .process-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .principle-card {
+    padding: 25px;
+  }
+
+  .decision-grid {
+    padding: 30px 22px;
+  }
+
+  .approach-final .trust-box {
+    padding: 30px 22px;
+  }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .process-card,
+  .principle-card {
+    transition: none;
+  }
+
+  .process-card::before,
+  .principle-card::before {
+    transition: none;
   }
 
 }

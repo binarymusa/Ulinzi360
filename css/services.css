@@ -1,1099 +1,1264 @@
 /* =========================================
-   SERVICES PAGE
+   ULINZI360 — SERVICES PAGE
 ========================================= */
 
 
-/* HERO */
+/* =========================================
+   PAGE HERO
+========================================= */
 
-.page-hero{
+.page-hero {
+  min-height: 82vh;
 
-  min-height:85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  display:flex;
+  padding-top: 150px;
+  padding-bottom: 110px;
 
-  flex-direction:column;
-
-  justify-content:center;
-
-  padding-top:160px;
-
-  padding-bottom:120px;
-
-  position:relative;
-
-  overflow:hidden;
-
+  position: relative;
+  overflow: hidden;
 }
 
-.page-hero::before{
+.page-hero::before {
+  content: "";
 
-  content:"";
+  position: absolute;
 
-  position:absolute;
+  width: 850px;
+  height: 850px;
 
-  width:900px;
-
-  height:900px;
+  top: -300px;
+  right: -250px;
 
   background:
-  radial-gradient(
-    circle,
-    rgba(56,189,248,.12),
-    transparent 70%
-  );
-
-  top:-350px;
-
-  right:-250px;
-
-  z-index:-1;
-
-}
-
-.page-hero h1{
-
-  font-family:'Merriweather',serif;
-
-  font-weight:900;
-
-  font-size:clamp(4rem,8vw,7rem);
-
-  line-height:.9;
-
-  letter-spacing:-.05em;
-
-  margin:25px 0 35px;
-
-  max-width:950px;
-
-}
-
-.page-hero p{
-
-  max-width:760px;
-
-  color:var(--muted);
-
-  font-size:1.05rem;
-
-  line-height:2;
-
-}
-
-
-
-/* INTRO */
-
-.services-intro{
-
-  padding:120px 0 140px;
-
-}
-
-
-
-.services-intro p{
-
-  max-width:850px;
-
-    color:var(--muted);
-
-    line-height:2;
-
-}
-
-
-
-
-
-/* SERVICE GRID */
-
-
-.service-page{
-
-    display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-    gap:35px;
-
-  padding-bottom:180px;
-
-}
-
-
-
-
-
-.service-detail{
-
-    position:relative;
-
-
-    border:1px solid var(--line);
-
-
-  border-radius:36px;
-
-
-  padding:55px;
-
-
-  overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-        180deg,
-        rgba(255,255,255,.03),
-        rgba(255,255,255,.01)
+    radial-gradient(
+      circle,
+      rgba(212, 175, 55, 0.12),
+      transparent 68%
     );
 
+  pointer-events: none;
 
-  backdrop-filter:blur(10px);
-
+  z-index: -1;
 }
 
+.page-hero::after {
+  content: "";
 
+  position: absolute;
 
-.service-detail::before{
+  width: 500px;
+  height: 500px;
 
-    content:"";
+  bottom: -300px;
+  left: -250px;
 
-
-    position:absolute;
-
-    inset:0;
-
-
-    background:
-
-    linear-gradient(
-        135deg,
-        rgba(56,189,248,.10),
-  transparent 45%
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 47, 134, 0.16),
+      transparent 70%
     );
 
+  pointer-events: none;
 
-    opacity:0;
+  z-index: -1;
+}
 
-  transition:.5s ease;
+.page-hero h1 {
+  max-width: 1000px;
 
+  margin: 25px 0 35px;
+
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+
+  font-size: clamp(3.5rem, 7vw, 6.8rem);
+
+  line-height: 0.96;
+
+  letter-spacing: -0.045em;
+}
+
+.page-hero p {
+  max-width: 780px;
+
+  color: var(--muted);
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
 }
 
 
+/* =========================================
+   SHARED SECTION HEADINGS
+========================================= */
 
-.service-detail:hover{
+.section-heading,
+.flagship-heading {
+  max-width: 850px;
 
-  transform:translateY(-14px);
+  margin-bottom: 65px;
+}
 
-  border-color:rgba(56,189,248,.4);
+.section-heading h2,
+.flagship-heading h2 {
+  font-family: "Merriweather", serif;
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  margin: 20px 0 25px;
+}
+
+.section-heading p,
+.flagship-heading p {
+  max-width: 760px;
+
+  color: var(--muted);
+
+  line-height: 1.9;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================
+   SERVICES INTRO
+========================================= */
+
+.services-intro {
+  padding: 110px 0 100px;
+
+  border-top: 1px solid var(--line);
+}
+
+.services-intro .section-top {
+  margin-bottom: 35px;
+}
+
+.services-intro .section-top h2 {
+  font-family: "Merriweather", serif;
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  margin: 20px 0 30px;
+}
+
+.services-intro > p {
+  max-width: 850px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+
+  line-height: 2;
+}
+
+
+/* =========================================
+   CORE SERVICES
+========================================= */
+
+.core-services {
+  padding-bottom: 130px;
+}
+
+.service-page {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================================
+   SERVICE DETAIL CARD
+========================================= */
+
+.service-detail {
+  position: relative;
+
+  min-height: 430px;
+
+  padding: 48px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.service-detail::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212, 175, 55, 0.10),
+      transparent 48%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+.service-detail::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: var(--accent);
+
+  transition: width 0.45s ease;
+}
+
+.service-detail:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(212, 175, 55, 0.45);
 
   box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.28);
+}
 
-  0 30px 70px rgba(0,0,0,.35);
+.service-detail:hover::before {
+  opacity: 1;
+}
 
+.service-detail:hover::after {
+  width: 100%;
 }
 
 
+/* =========================================
+   FULL WIDTH SERVICE
+========================================= */
 
-.service-detail:hover::before{
+.service-detail.full {
+  grid-column: span 2;
 
-    opacity:1;
-
+  min-height: 380px;
 }
 
 
+/* =========================================
+   SERVICE NUMBER
+========================================= */
 
+.service-number {
+  display: inline-flex;
 
+  align-items: center;
 
-.service-detail.full{
+  gap: 12px;
 
-  grid-column:span 2;
+  margin-bottom: 24px;
 
+  color: var(--accent);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+.service-number::after {
+  content: "";
+
+  width: 38px;
+  height: 1px;
+
+  background: rgba(212, 175, 55, 0.45);
 }
 
 
+/* =========================================
+   SERVICE TITLE
+========================================= */
 
+.service-detail h2 {
+  position: relative;
 
+  z-index: 1;
 
-/* NUMBER */
+  max-width: 700px;
 
+  margin-bottom: 22px;
 
-.service-number{
+  font-family: "Merriweather", serif;
 
-  display:inline-flex;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
 
-  align-items:center;
+  line-height: 1.15;
 
-  gap:10px;
-
-
-  color:var(--accent);
-
-  font-size:.78rem;
-
-  letter-spacing:.28em;
-
-  margin-bottom:25px;
-
+  letter-spacing: -0.025em;
 }
 
 
+/* =========================================
+   SERVICE DESCRIPTION
+========================================= */
 
-.service-number::after{
+.service-detail p {
+  position: relative;
 
-  content:"";
+  z-index: 1;
 
-  width:40px;
+  max-width: 680px;
 
-  height:1px;
+  margin-bottom: 30px;
 
-  background:rgba(56,189,248,.4);
+  color: var(--muted);
 
+  line-height: 1.9;
 }
 
 
+/* =========================================
+   SERVICE TAGS
+========================================= */
 
+.tags {
+  position: relative;
 
-/* TITLE */
+  z-index: 1;
 
+  display: flex;
 
-.service-detail h2{
+  flex-wrap: wrap;
 
-    font-family:'Merriweather',serif;
+  gap: 10px;
 
-  font-size:2.3rem;
+  margin-bottom: 32px;
+}
 
-  line-height:1.1;
+.tags span {
+  padding: 9px 14px;
 
-    margin-bottom:25px;
+  border: 1px solid var(--line);
 
+  border-radius: 100px;
+
+  background: rgba(212, 175, 55, 0.035);
+
+  color: var(--muted);
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.service-detail:hover .tags span {
+  border-color: rgba(212, 175, 55, 0.25);
+
+  color: var(--accent);
 }
 
 
+/* =========================================
+   SERVICE LINK
+========================================= */
 
-.service-detail p{
+.service-detail .text-link {
+  position: relative;
 
-    color:var(--muted);
+  z-index: 2;
 
-  max-width:600px;
+  display: inline-flex;
 
-  line-height:1.95;
+  align-items: center;
 
-  margin-bottom:35px;
+  gap: 8px;
 
+  color: var(--accent);
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-detail .text-link:hover {
+  gap: 14px;
+
+  color: #ffffff;
 }
 
 
+/* =========================================
+   SPECIALIZED SOLUTIONS INTRO
+========================================= */
 
+.specialized-intro {
+  padding: 120px 0 70px;
 
-
-/* TAGS */
-
-
-.tags{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:14px;
-
-  margin-bottom:40px;
-
+  border-top: 1px solid var(--line);
 }
 
-
-
-.tags span{
-
-  border:1px solid var(--line);
-
-
-  padding:12px 18px;
-
-
-  border-radius:100px;
-
-
-  color:var(--accent);
-
-
-  font-size:.68rem;
-
-
-  letter-spacing:.16em;
-
-
-  background:
-
-  rgba(56,189,248,.05);
-
-}
-
-
-
-.tags span:hover{
-
-  background:
-
-  rgba(56,189,248,.15);
-
-  transform:translateY(-3px);
-
-}
-
-
-
-
-
-/* CTA */
-
-
-.services-cta{
-
-  padding-bottom:180px;
-
-}
-
-
-
-.trust-box{
-
-  position:relative;
-
-
-  border:1px solid var(--line);
-
-
-  border-radius:42px;
-
-
-  padding:90px;
-
-
-  overflow:hidden;
-
-
-  background:
-
-  linear-gradient(
-  135deg,
-  rgba(56,189,248,.08),
-  rgba(255,255,255,.01)
-  );
-
-
-  text-align:center;
-
-}
-
-
-
-.trust-box::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:500px;
-
-  height:500px;
-
-
-  background:
-
-  radial-gradient(
-  circle,
-  rgba(56,189,248,.15),
-  transparent 70%
-  );
-
-
-  top:-250px;
-
-  right:-200px;
-
-}
-
-
-
-.trust-box h2{
-
-  position:relative;
-
-
-  font-family:'Merriweather',serif;
-
-
-  font-size:clamp(2rem,5vw,4rem);
-
-
-  margin-bottom:30px;
-
-}
-
-
-
-.trust-box p{
-
-  position:relative;
-
-
-  max-width:820px;
-
-
-  margin:auto auto 40px;
-
-
-  color:var(--muted);
-
-  line-height:2;
-
-}
-
-
-
-
-
-/* MOBILE */
-
-
-@media(max-width:1000px){
-
-
-.service-page{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-
-.service-detail.full{
-
-grid-column:span 1;
-
-}
-
-
-
-}
-
-
-
-@media(max-width:700px){
-
-
-.page-hero{
-
-min-height:auto;
-
-padding-top:140px;
-
-padding-bottom:100px;
-
-}
-
-
-
-.page-hero h1{
-
-font-size:3rem;
-
-}
-
-
-
-.service-detail{
-
-padding:30px;
-
-}
-
-
-
-.service-detail h2{
-
-font-size:1.7rem;
-
-}
-
-
-
-.trust-box{
-
-padding:45px 30px;
-
-border-radius:30px;
-
-}
-
-
-
-.tags span{
-
-font-size:.6rem;
-
-padding:10px 14px;
-
-}
-
-
-
-}
 
 /* =========================================
    FLAGSHIP SERVICES
 ========================================= */
 
-
-.cybershield-section{
-
-    padding:60px 0 160px;
-
+.cybershield-section,
+.training-section {
+  padding: 80px 0 130px;
 }
 
-
-
-.cyber-intro{
-
-    max-width:820px;
-
-    margin:30px 0 70px;
-
-    color:var(--muted);
-
-    line-height:2;
-
-    font-size:1.05rem;
-
+.flagship-heading {
+  margin-bottom: 35px;
 }
 
+.flagship-heading h2 {
+  margin-bottom: 22px;
+}
 
+.cyber-intro {
+  max-width: 820px;
 
+  margin: 0;
 
+  color: var(--muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.95;
+}
 
 
 /* =========================================
-   SERVICE CARDS
+   TABS
 ========================================= */
 
+.plan-tabs {
+  display: flex;
 
-.pricing-grid{
+  justify-content: flex-start;
 
-    display:grid;
+  align-items: center;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+  gap: 10px;
 
-    gap:35px;
+  margin: 40px 0;
 
+  padding-bottom: 4px;
+
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  position: relative;
+
+  padding: 12px 24px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  color: var(--muted);
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--accent);
+
+  border-color: rgba(212, 175, 55, 0.5);
+
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #081018;
+
+  box-shadow:
+    0 8px 25px rgba(212, 175, 55, 0.14);
 }
 
 
+/* =========================================
+   PLANS CONTAINER
+========================================= */
 
-.pricing-card{
+.plans-container {
+  position: relative;
 
-    position:relative;
+  min-height: 100px;
+}
 
-    overflow:hidden;
+.plans-container .pricing-card {
+  display: none;
+}
 
-    border:1px solid var(--line);
+.plans-container .pricing-card.active {
+  display: block;
 
-    border-radius:32px;
+  animation: serviceFadeUp 0.4s ease;
+}
 
-    padding:45px;
+@keyframes serviceFadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
 
 
-    background:
+/* =========================================
+   PRICING CARD
+========================================= */
 
+.pricing-card {
+  position: relative;
+
+  overflow: hidden;
+
+  max-width: 100%;
+
+  padding: 48px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 30px;
+
+  background:
     linear-gradient(
-        145deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.02)
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.012)
     );
 
+  backdrop-filter: blur(14px);
 
-    backdrop-filter:blur(14px);
-
-
-    transition:.45s ease;
-
-
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
+.pricing-card::before {
+  content: "";
 
+  position: absolute;
 
-/* GOLD LIGHT EFFECT */
+  inset: 0;
 
-
-.pricing-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-
-    background:
-
+  background:
     linear-gradient(
-        135deg,
-        rgba(212,175,55,.15),
-        transparent 55%
+      135deg,
+      rgba(212, 175, 55, 0.09),
+      transparent 55%
     );
 
+  opacity: 0;
 
-    opacity:0;
+  transition: opacity 0.4s ease;
 
-    transition:.45s ease;
-
+  pointer-events: none;
 }
 
+.pricing-card::after {
+  content: "";
 
+  position: absolute;
 
-/* TOP GOLD LINE */
+  top: 0;
+  left: 0;
 
+  width: 0;
+  height: 3px;
 
-.pricing-card::after{
+  background: var(--accent);
 
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:0;
-
-    height:3px;
-
-    background:var(--accent);
-
-    transition:.45s ease;
-
+  transition: width 0.4s ease;
 }
 
+.pricing-card:hover {
+  transform: translateY(-8px);
 
+  border-color: rgba(212, 175, 55, 0.38);
 
-
-.pricing-card:hover{
-
-
-    transform:
-    translateY(-14px);
-
-
-    border-color:
-    rgba(212,175,55,.55);
-
-
-    box-shadow:
-
-    0 30px 70px
-    rgba(0,0,0,.35);
-
-
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.28);
 }
 
-
-
-.pricing-card:hover::before{
-
-    opacity:1;
-
+.pricing-card:hover::before {
+  opacity: 1;
 }
 
-
-
-.pricing-card:hover::after{
-
-    width:100%;
-
+.pricing-card:hover::after {
+  width: 100%;
 }
-
-
-
-
-
-
 
 
 /* =========================================
-   FEATURED CARD
+   FEATURED PLAN
 ========================================= */
 
+.pricing-card.featured {
+  border: 1px solid rgba(212, 175, 55, 0.65);
 
-.pricing-card.featured{
-
-
-    border:
-
-    2px solid var(--accent);
-
-
-
-    background:
-
+  background:
     linear-gradient(
-        145deg,
-        rgba(212,175,55,.12),
-        rgba(255,255,255,.03)
+      145deg,
+      rgba(212, 175, 55, 0.10),
+      rgba(255, 255, 255, 0.025)
     );
 
-
-
-    box-shadow:
-
-    0 0 50px
-    rgba(212,175,55,.18);
-
-
+  box-shadow:
+    0 15px 50px rgba(212, 175, 55, 0.08);
 }
 
-
-
-
-
+.pricing-card.featured::after {
+  width: 100%;
+}
 
 
 /* =========================================
-   TITLES
+   PRICING TITLES
 ========================================= */
 
+.pricing-card h3 {
+  position: relative;
 
-.pricing-card h3{
+  z-index: 1;
 
+  margin-bottom: 20px;
 
-    font-family:'Merriweather',serif;
+  font-family: "Merriweather", serif;
 
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
 
-    font-size:2rem;
-
-
-    line-height:1.2;
-
-
-    margin-bottom:25px;
-
-
+  line-height: 1.15;
 }
-
-
-
-
 
 
 /* =========================================
-   PRICE / NUMBER
+   PRICE
 ========================================= */
 
+.price {
+  position: relative;
 
-.price{
+  z-index: 1;
 
+  margin-bottom: 24px;
 
-    font-size:2.6rem;
+  color: var(--accent);
 
+  font-size: 2.3rem;
 
-    font-weight:900;
+  font-weight: 800;
 
-
-    color:var(--accent);
-
-
-    margin-bottom:25px;
-
-
+  letter-spacing: -0.03em;
 }
 
+.price span {
+  color: var(--muted);
 
+  font-size: 0.9rem;
 
-.price span{
+  font-weight: 500;
 
-
-    font-size:1rem;
-
-
-    font-weight:500;
-
-
-    color:var(--muted);
-
-
+  letter-spacing: 0;
 }
-
-
-
-
-
 
 
 /* =========================================
-   DESCRIPTION
+   PLAN DESCRIPTION
 ========================================= */
 
+.plan-for {
+  position: relative;
 
-.plan-for{
+  z-index: 1;
 
+  max-width: 750px;
 
-    color:var(--muted);
+  margin-bottom: 30px;
 
+  color: var(--muted);
 
-    margin-bottom:30px;
-
-
-    line-height:1.9;
-
-
+  line-height: 1.9;
 }
-
-
-
-
 
 
 /* =========================================
-   FEATURES
+   PLAN FEATURES
 ========================================= */
 
+.pricing-card ul {
+  position: relative;
 
-.pricing-card ul{
+  z-index: 1;
 
+  display: grid;
 
-    list-style:none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
+  gap: 0 35px;
 
-    padding:0;
+  list-style: none;
 
+  padding: 0;
 
-    margin:0 0 40px;
-
-
+  margin: 0 0 38px;
 }
 
+.pricing-card ul li {
+  position: relative;
 
+  padding: 13px 0 13px 25px;
 
-.pricing-card ul li{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
+  color: #ffffff;
 
-    position:relative;
+  font-size: 0.94rem;
 
-
-    padding-left:25px;
-
-
-    margin-bottom:18px;
-
-
-    color:#ffffff;
-
-
-    line-height:1.7;
-
-
+  line-height: 1.6;
 }
 
+.pricing-card ul li::before {
+  content: "✓";
 
+  position: absolute;
 
-.pricing-card ul li::before{
+  left: 0;
+  top: 13px;
 
+  color: var(--accent);
 
-    content:"✓";
-
-
-    position:absolute;
-
-
-    left:0;
-
-
-    color:var(--accent);
-
-
-    font-weight:900;
-
-
+  font-weight: 800;
 }
-
-
-
-
-
-
 
 
 /* =========================================
-   BUTTON
+   PRICING BUTTON
 ========================================= */
 
+.pricing-card .primary-btn {
+  position: relative;
 
-.pricing-card .primary-btn{
+  z-index: 2;
+
+  min-width: 190px;
+
+  justify-content: center;
+}
 
 
-    width:100%;
+/* =========================================
+   TRAINING SECTION
+========================================= */
+
+.training-section {
+  border-top: 1px solid var(--line);
+
+  padding-top: 120px;
+}
 
 
-    justify-content:center;
+/* =========================================
+   FINAL CTA
+========================================= */
 
+.services-cta {
+  padding: 80px 0 150px;
+}
+
+.trust-box {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 90px 70px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212, 175, 55, 0.08),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  text-align: center;
+}
+
+.trust-box::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  top: -300px;
+  right: -200px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212, 175, 55, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.trust-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -280px;
+  left: -150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 47, 134, 0.14),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.trust-box .section-label,
+.trust-box h2,
+.trust-box p,
+.trust-box .primary-btn {
+  position: relative;
+
+  z-index: 1;
+}
+
+.trust-box h2 {
+  max-width: 850px;
+
+  margin: 22px auto 25px;
+
+  font-family: "Merriweather", serif;
+
+  font-size: clamp(2.1rem, 5vw, 4rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+.trust-box p {
+  max-width: 760px;
+
+  margin: 0 auto 38px;
+
+  color: var(--muted);
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   GOLD TEXT
+========================================= */
+
+.gold {
+  color: var(--accent);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .page-hero {
+    min-height: 75vh;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(3.3rem, 7vw, 5.8rem);
+  }
+
+  .service-detail {
+    padding: 40px;
+  }
+
+  .pricing-card {
+    padding: 40px;
+  }
 
 }
 
 
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
 
+@media (max-width: 900px) {
 
+  .page-hero {
+    min-height: auto;
 
+    padding-top: 135px;
+    padding-bottom: 90px;
+  }
 
+  .service-page {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail.full {
+    grid-column: span 1;
+  }
+
+  .service-detail {
+    min-height: auto;
+  }
+
+  .pricing-card ul {
+    grid-template-columns: 1fr;
+  }
+
+  .cybershield-section,
+  .training-section {
+    padding-bottom: 100px;
+  }
+
+  .trust-box {
+    padding: 70px 45px;
+  }
+
+}
 
 
 /* =========================================
    MOBILE
 ========================================= */
 
+@media (max-width: 700px) {
 
-@media(max-width:900px){
+  .page-hero {
+    padding-top: 120px;
 
+    padding-bottom: 75px;
+  }
 
-    .cybershield-section{
+  .page-hero h1 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
 
-        padding-bottom:90px;
+    line-height: 1;
+  }
 
-    }
+  .page-hero p {
+    font-size: 0.95rem;
 
-
-
-    .pricing-grid{
-
-
-        grid-template-columns:1fr;
-
-
-        gap:25px;
-
-
-    }
+    line-height: 1.8;
+  }
 
 
+  /* INTRO */
 
-    .pricing-card{
+  .services-intro {
+    padding: 80px 0;
+  }
 
-
-        padding:32px;
-
-
-        border-radius:26px;
-
-
-    }
+  .services-intro .section-top h2 {
+    font-size: 2.2rem;
+  }
 
 
+  /* CORE SERVICES */
 
-    .pricing-card h3{
+  .core-services {
+    padding-bottom: 80px;
+  }
+
+  .section-heading,
+  .flagship-heading {
+    margin-bottom: 45px;
+  }
+
+  .section-heading h2,
+  .flagship-heading h2 {
+    font-size: 2.25rem;
+  }
+
+  .section-heading p,
+  .flagship-heading p {
+    font-size: 0.94rem;
+  }
 
 
-        font-size:1.6rem;
+  /* SERVICE CARDS */
+
+  .service-page {
+    gap: 18px;
+  }
+
+  .service-detail {
+    padding: 30px;
+
+    border-radius: 22px;
+  }
+
+  .service-detail h2 {
+    font-size: 1.65rem;
+  }
+
+  .service-detail p {
+    font-size: 0.92rem;
+
+    line-height: 1.8;
+  }
+
+  .tags {
+    gap: 8px;
+
+    margin-bottom: 27px;
+  }
+
+  .tags span {
+    padding: 8px 11px;
+
+    font-size: 0.57rem;
+  }
 
 
-    }
+  /* SPECIALIZED */
+
+  .specialized-intro {
+    padding: 80px 0 45px;
+  }
+
+  .cybershield-section,
+  .training-section {
+    padding: 60px 0 80px;
+  }
 
 
+  /* TABS */
+
+  .plan-tabs {
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    margin: 30px 0;
+  }
+
+  .tab-btn {
+    padding: 10px 17px;
+
+    font-size: 0.65rem;
+  }
+
+
+  /* PRICING */
+
+  .pricing-card {
+    padding: 30px;
+
+    border-radius: 24px;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.65rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+
+  .pricing-card ul {
+    margin-bottom: 30px;
+  }
+
+  .pricing-card ul li {
+    font-size: 0.88rem;
+  }
+
+  .pricing-card .primary-btn {
+    width: 100%;
+  }
+
+
+  /* CTA */
+
+  .services-cta {
+    padding: 40px 0 90px;
+  }
+
+  .trust-box {
+    padding: 55px 25px;
+
+    border-radius: 28px;
+  }
+
+  .trust-box h2 {
+    font-size: 2.15rem;
+  }
+
+  .trust-box p {
+    font-size: 0.92rem;
+
+    line-height: 1.8;
+  }
 
 }
+
+
 /* =========================================
-   CYBERSHIELD TABS
-=========================================*/
+   SMALL PHONES
+========================================= */
 
-.plan-tabs{
+@media (max-width: 420px) {
 
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin:50px 0;
+  .page-hero h1 {
+    font-size: 2.55rem;
+  }
 
-    flex-wrap:wrap;
+  .service-detail {
+    padding: 25px;
+  }
 
-}
+  .service-detail h2 {
+    font-size: 1.5rem;
+  }
 
-.tab-btn{
+  .service-number {
+    font-size: 0.65rem;
+  }
 
-    padding:14px 30px;
+  .tab-btn {
+    padding: 9px 14px;
 
-    border:1px solid var(--line);
+    font-size: 0.58rem;
+  }
 
-    background:transparent;
+  .pricing-card {
+    padding: 25px;
+  }
 
-    color:white;
+  .pricing-card h3 {
+    font-size: 1.5rem;
+  }
 
-    border-radius:100px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    font-size:.95rem;
-
-    font-weight:600;
-
-}
-
-.tab-btn:hover{
-
-    border-color:var(--accent);
-
-    color:var(--accent);
+  .trust-box {
+    padding: 45px 20px;
+  }
 
 }
 
-.tab-btn.active{
 
-    background:var(--accent);
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
-    color:#081018;
+@media (prefers-reduced-motion: reduce) {
 
-    border-color:var(--accent);
+  .service-detail,
+  .pricing-card,
+  .tab-btn,
+  .service-detail .text-link {
+    transition: none;
+  }
 
-}
-
-.plans-container{
-
-    position:relative;
-
-}
-
-.plans-container .pricing-card{
-
-    display:none;
-
-    animation:fadeUp .45s ease;
-
-}
-
-.plans-container .pricing-card.active{
-
-    display:block;
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+  .plans-container .pricing-card.active {
+    animation: none;
+  }
 
 }
