@@ -694,6 +694,7 @@
 
 .form-wrapper {
   min-width: 0;
+
 }
 
 
@@ -703,6 +704,8 @@
   flex-direction: column;
 
   gap: 22px;
+
+  /* border: 1px solid white; */
 }
 
 
@@ -821,6 +824,23 @@
 
   border: 0;
 }
+
+.contact-form-confirm {
+  /* border: 1px solid white; */
+  text-align: center;
+  padding: 50% 0 50% 0; 
+  color: rgb(13, 213, 90);
+  font-weight: 700;
+  display: none;
+}
+.contact-form-confirm span{
+  border: 1px solid white;
+  border-radius: 50%;
+  /* background-color: rgb(29, 147, 74); */
+  /* text-align: center; */
+  padding: 20%;
+}
+
 
 
 
